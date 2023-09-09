@@ -17,9 +17,8 @@ axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Toaster position='bottom-right' toastOptions={{duration:2000}}/>
+    <div className="App">
+      <Toaster position='bottom-right' toastOptions={{ duration: 2000 }} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
@@ -28,7 +27,7 @@ function App() {
         <Route path='/addTodoItems' element={<CreateTodoItem />} />
         <Route path='/editTodoItem' element={<EditTodoItem />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

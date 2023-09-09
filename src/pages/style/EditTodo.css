@@ -1,0 +1,117 @@
+.todo-block {
+    width: 500px;
+    padding-top: 20px;
+    height: 400px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #ff656c;
+    margin: 0 auto;
+    margin-top: 160px;
+}
+
+
+
+.todo-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.titleblock {
+    margin-top: 15px;
+    padding: 30px;
+    position: absolute;
+    font-family: Montserrat;
+    padding: 4px;
+}
+
+.titleblock label {
+    padding: 20px;
+    font-size: 21px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.titleblock input {
+    margin-left: 65px;
+    height: 25px;
+    padding: 4px;
+}
+
+.dueDateblock {
+    margin-top: 75px;
+    position: absolute;
+    font-family: Montserrat;
+    padding: 4px;
+}
+
+.dueDateblock label {
+    padding: 30px;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.dueDateblock input {
+    margin-left: -5px;
+    height: 25px;
+    padding: 4px;
+}
+
+.occuranceblock {
+    margin-top: 135px;
+    position: absolute;
+    font-family: Montserrat;
+    padding: 4px;
+    margin-left: 33px;
+}
+
+.occuranceblock label {
+    font-size: 21px;
+}
+
+.categoryblock {
+    margin-top: 185px;
+    position: absolute;
+    font-family: Montserrat;
+    padding: 4px;
+    margin-left: 33px;
+}
+
+.categoryblock label {
+    font-size: 21px;
+}
+
+.remindMeblock {
+    margin-top: 235px;
+    position: absolute;
+    font-family: Montserrat;
+    padding: 4px;
+    margin-left: 33px;
+}
+
+.remindMeblock label {
+    font-size: 21px;
+}
+
+.button {
+    margin-top: 295px;
+    width: 150px;
+    height: 40px;
+    background: #ff656c;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #ff7b81;
+}

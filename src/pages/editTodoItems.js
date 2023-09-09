@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
+import './style/EditTodo.css';
 export default function EditTodoItem() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -26,10 +27,11 @@ export default function EditTodoItem() {
     const handleCategoryChange = (e) => {
         setCategory(e.target.value);
     }
-    const handleRemindmeChange = (value) => {
+    const handleRemindmeChange = (e) => {
         setRemindMe(!isRemindMe);
     }
-    const handleOnSubmit = async () => {
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
         const id = location.state._id;
         const authToken = location.state.token
         const requestBody = {
@@ -52,66 +54,66 @@ export default function EditTodoItem() {
 
     }
     return (
-        <div>
-            <form>
-                <div>
-                    <label for="fname">Title
-                        <input type='text' onChange={handleTitleChange} value={inputTextTitle} />
-                    </label>
-                </div>
-                <div>
-                    <label>Due Date</label>
-                    <input type='date' value={dueDate} onChange={handleDueDateChange} />
-                </div>
-                <div>
-                    <label>Occurance: </label>
-                    <label>
-                        <input type="radio" value="Daily" checked={occurance === "Daily"} onChange={handleOccuranceChange} />
-                        Daily
-                    </label>
-                    <label>
-                        <input type="radio" value="Weekly" checked={occurance === "Weekly"} onChange={handleOccuranceChange} />
-                        Weekly
-                    </label>
-                    <label>
-                        <input type="radio" value="Monthly" checked={occurance === "Monthly"} onChange={handleOccuranceChange} />
-                        Monthly
-                    </label>
-                    <label>
-                        <input type="radio" value="Yearly" checked={occurance === "Yearly"} onChange={handleOccuranceChange} />
-                        Yearly
-                    </label>
-                </div>
+        <div className='body'>
+            <div className="todo-block">
+                <h1>Edit Todo Items</h1>
+                <form onSubmit={handleOnSubmit}>
+                    <div className='titleblock'>
+                        <label for="fname">Title
+                            <input type='text' onChange={handleTitleChange} value={inputTextTitle} />
+                        </label>
+                    </div>
+                    <div className='dueDateblock'>
+                        <label >Due Date</label>
+                        <input type='test' value={dueDate} onChange={handleDueDateChange} />
+                    </div>
+                    <div className='occuranceblock'>
+                        <label>Occurance: </label>
+                        <label>
+                            <input type="radio" value="Daily" checked={occurance === "Daily"} onChange={handleOccuranceChange} />
+                            Daily
+                        </label>
+                        <label>
+                            <input type="radio" value="Weekly" checked={occurance === "Weekly"} onChange={handleOccuranceChange} />
+                            Weekly
+                        </label>
+                        <label>
+                            <input type="radio" value="Monthly" checked={occurance === "Monthly"} onChange={handleOccuranceChange} />
+                            Monthly
+                        </label>
+                        <label>
+                            <input type="radio" value="Yearly" checked={occurance === "Yearly"} onChange={handleOccuranceChange} />
+                            Yearly
+                        </label>
+                    </div>
 
-                <div>
-                    <label>Category: </label>
-                    <label>
-                        <input type="radio" value="Personal" checked={category === "Personal"} onChange={handleCategoryChange} />
-                        Personal
-                    </label>
+                    <div className='categoryblock'>
+                        <label>Category: </label>
+                        <label>
+                            <input type="radio" style={{ marginLeft: '17px' }} value="Personal" checked={category === "Personal"} onChange={handleCategoryChange} />
+                            Personal
+                        </label>
 
-                    <label>
-                        <input type="radio" value="Official" checked={category === "Official"} onChange={handleCategoryChange} />
-                        Official
-                    </label>
+                        <label>
+                            <input type="radio" value="Official" checked={category === "Official"} onChange={handleCategoryChange} />
+                            Official
+                        </label>
 
-                    <label>
-                        <input type="radio" value="Social" checked={category === "Social"} onChange={handleCategoryChange} />
-                        Social
-                    </label>
-                </div>
+                        <label>
+                            <input type="radio" value="Social" checked={category === "Social"} onChange={handleCategoryChange} />
+                            Social
+                        </label>
+                    </div>
 
-                <div>
-                    <label>Remind Me </label>
-                    <input type="checkbox" value={isRemindMe}
-                        onChange={handleRemindmeChange}></input>
-                </div>
-                <div>
-                    <label>
-                        <input type='button' value={"Edit Todo"} onClick={handleOnSubmit} />
-                    </label>
-                </div>
-            </form>
+                    <div className='remindMeblock'>
+                        <label>Remind Me </label>
+                        <input type="checkbox"
+                            checked={isRemindMe}
+                            onChange={handleRemindmeChange}></input>
+                    </div>
+                    <button type='submit' className='button'>Edit Todo</button>
+                </form>
+            </div>
         </div>
     )
 }
